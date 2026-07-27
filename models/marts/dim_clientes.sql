@@ -1,8 +1,8 @@
 with
-
-    source as (select * from {{ ref("int_dimensao_clientes") }}),
-
-    renamed as (select * from source)
+    dim_clientes as (
+        select *
+        from {{ ref('int_dimensao_clientes') }}
+    )
 
 select *
-from renamed
+from dim_clientes
